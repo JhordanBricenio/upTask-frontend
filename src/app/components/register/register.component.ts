@@ -7,14 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { User } from '../../model/user';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [FormsModule,CommonModule,MatInputModule, MatFormFieldModule, ReactiveFormsModule
-    ,FormsModule, MatCardModule,MatFormFieldModule, MatProgressBarModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    ,FormsModule, MatCardModule,MatFormFieldModule, MatProgressBarModule, RouterLink],
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);

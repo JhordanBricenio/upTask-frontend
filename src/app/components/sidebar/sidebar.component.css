@@ -1,0 +1,13 @@
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  width: 280px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+p{
+  font-size: 10px;
+}

@@ -1,0 +1,49 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="shadow rounded border-0 card " style="width: 100%; max-width: 400px;">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title class="fw-bold text-center">UpTask Restart Password</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="px-3">
+        <form [formGroup]="passwordForm" (ngSubmit)="onSubmit()" class="login-form mt-4 av-invalid mb-2">
+          <div class="row">
+            <div class="col-lg-12 mt-2">
+              <mat-form-field class="example-full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" type="password" required />
+                <mat-error *ngIf="passwordForm.get('password')?.hasError('required')">
+                  La contraseña es requerida.
+                </mat-error>
+                <mat-error *ngIf="passwordForm.get('password')?.hasError('minlength')">
+                  La contraseña debe tener al menos 6 caracteres.
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-12 mt-2">
+              <mat-form-field class="example-full-width">
+                <mat-label>Confirmar Contraseña</mat-label>
+                <input matInput formControlName="confirmPassword" type="password" required />
+                <mat-error *ngIf="passwordForm.hasError('passwordMismatch')">
+                  Las contraseñas no coinciden.
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="mb-3 mt-5 col-lg-12">
+              <div class="d-grid">
+                <button mat-raised-button class="btn btn-primary"  type="submit" [disabled]="passwordForm.invalid">
+                  Actualizar Contraseña
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 text-center col-lg-12 mt-4 mb-5">
+            <div class="d-flex d-grid justify-content-between">
+              <a class="custom-link " routerLink="/register">Crea tu cuenta</a>
+              <a class="custom-link" routerLink="/forgot">¿Olvidaste tu contraseña ?</a>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

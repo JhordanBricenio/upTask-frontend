@@ -2,3 +2,67 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.login-page {
+    font-size: 15px;
+}
+.mat-card-title{
+    text-align: center;
+}
+.ps-5 {
+    padding-left: 3rem !important;
+}
+.btn-primary {
+    outline: none;
+    background-color: #FF535B !important;
+    border: 1px solid #FF535B !important;
+    color: #fff !important;
+    box-shadow: 0 3px 5px 0 rgb(255 83 91 / 30%);
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+.in {
+    font-size: 16px !important;
+    font-family: "Nunito",sans-serif;
+}
+.btn.btn-light {
+    color: #3c4858 !important;
+    border: 1px solid #dee2e6 !important;
+    outline: none;
+}
+.text-primary {
+    color: #FF535B !important;
+    text-decoration: none;
+}
+.fa-brands{
+    font-size: 15px;
+    color: #FF535B !important;
+}
+
+.example-card mat-card-header{
+    display: inline;
+    color: #FF535B !important;
+}
+
+.custom-link {
+    color: #FF535B;
+    font-size: small; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.custom-link:hover {
+    color: #f76b72; 
+    text-decoration: underline; 
+}
+
+.item{
+font-size: small;
+}

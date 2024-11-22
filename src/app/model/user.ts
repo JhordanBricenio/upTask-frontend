@@ -1,11 +1,8 @@
 export class User {
     id: number;
-    nombres: string;
-    apellidos: string;
-    password: string;
+    name: string;
+    lastName: string;
     email: string;
-    dni: string;
-    telefono: string;
-    enabled: boolean;
-    roles: string[]=[];
+    password: string;
+    roles:string[];
 }
