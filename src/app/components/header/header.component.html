@@ -1,0 +1,37 @@
+<header class="header">
+    <div class="logo">
+      <img href="../../../../public/favicon.ico">
+      <span class="ms-2 fw-bold text-primary">App TaskOps</span>
+    </div>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Taskdev</li>
+        <li class="breadcrumb-item">Gestión de Tareas</li>
+      </ol>
+    </nav>
+    <div class="d-flex align-items-center">
+      <div class="search-box me-3">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <div class="icons">
+        <i class="bi bi-list icon"></i>
+        <i class="bi bi-bag icon"></i>
+        <i class="bi bi-question-circle icon"></i>
+        <i class="bi bi-gear icon"></i>
+        <div class="dropdown">
+          <!-- Avatar -->
+          <div class="profile-circle dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ authService.usuario.email.slice(0, 2).toUpperCase() }}
+          </div>
+        
+          <!-- Modal Desplegable -->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <li>
+              <button class="btn w-100" (click)="logout()">Cerrar Sesión</button>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </header>

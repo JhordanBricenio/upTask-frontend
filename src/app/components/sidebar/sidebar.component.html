@@ -1,68 +1,113 @@
-<div class="sidebar bg-body-tertiary vh-100">
-  <div class="d-flex flex-column flex-shrink-0 p-3 pb-0 bg-body-tertiary" style="width: 280px;">
-    <div *ngIf="!authService.isAuntenitcated()" class="dropdown mt-3 ">
-      <a href="#" class="d-flex flex-column align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-        data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <p class="mt-2">{{authService.usuario.email}}</p>
-      </a>
-      <ul class="dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="#">Nuevo projecto...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Perfil</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a style="cursor: pointer;" class="dropdown-item" (click)="logout()">Cerrar Sessión</a></li>
-      </ul>
+<div class="d-flex flex-column" style=" height: 100vh;overflow: hidden;">
+  <div class="sidebar ">
+    <div class="text-black align-items-center  p-3 fw-bold d-flex flex-row">
+      <div class="bg-danger p-1 text-white rounded me-2">
+        GT
+      </div>
+      <div>
+        Gestión de Tareas
+      </div>
     </div>
-    <button *ngIf="authService.isAuntenitcated()" name="eliminar" mat-fab color="warn">
-      <mat-icon (click)="logout()">logout</mat-icon>
-    </button>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#home" />
-          </svg>
-          Inicio
-        </a>
-      </li>
+    <ul>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#speedometer2" />
-          </svg>
-          Tareas
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#table" />
-          </svg>
+        <a routerLink="/admin/index-project">
+          <span class="icon" style="color: #FF535B;"><i class="bi bi-bar-chart"></i></span>
           Proyectos
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#grid" />
-          </svg>
-          Productos
+        <a routerLink="/admin/create-project">
+          <span class="icon" style="color: #08cba4;"><i class="bi bi-grid"></i></span>
+          Crear proyecto
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#people-circle" />
-          </svg>
-          Usuarios
+        <a href="#">
+          <span class="icon"><i class="bi bi-list-task"></i></span>
+          Work items
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="bi bi-kanban"></i></span>
+          Backlogs
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="bi bi-calendar3"></i></span>
+          Sprints
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="bi bi-search"></i></span>
+          Queries
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="bi bi-box"></i></span>
+          Delivery Plans
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon" style="color: #08cba4;"><i class="bi bi-bar-chart-fill"></i></span>
+          Analytics views
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="bi bi-code"></i></span>
+          Wiql Playground
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="bi bi-gear"></i></span>
+          Settings
         </a>
       </li>
     </ul>
-    <hr>
   </div>
-  
+  <div class="main-content" id="main-content">
+    <!-- <div class="work-item-card">
+        <div>
+          <h5>TASK 104004</h5>
+        </div>
+        <div class="mt-2">
+          <h5> 104004 Apoyo en registrar funcionalidades por módulo - Parte 1</h5>
+        </div>
+        <div class=" d-flex flex-row align-items-center justify-content-between mt-3">
+          <div class="d-flex flex-row align-items-center">
+            <div class="avatar me-2">JC</div>
+            <div>
+              Jhordan Eugenio Briceño Caipo
+            </div>
+          </div>
+          <div class="bg-black">
+            <button class="border border-1 px-2">
+              <i class="bi bi-floppy"></i> Save
+            </button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="container state d-flex align-items-center justify-content-between ">
+        <div class="d-flex align-items-center py-1">
+          <p class="me-3">State: </p>
+          <select class="form-select form-select-sm"  onchange="updateState()">
+            <option value="closed" selected>Closed</option>
+            <option value="resolved">Resolved</option>
+        </select>
+        </div>
+        <div class="align-items-center">
+          <p>Updated: 5hours ago</p>
+        </div>
+      </div>
+      <div class="container">
+        gdsgdsg
+      </div> -->
+  </div>
 </div>

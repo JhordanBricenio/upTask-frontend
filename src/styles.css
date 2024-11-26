@@ -1,68 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700; 
+}
+
+main {
+  margin-top: 80px; 
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-weight: 400; 
+}
 
 .login-page {
-    font-size: 15px;
+  font-size: 15px;
 }
-.mat-card-title{
-    text-align: center;
+.mat-card-title {
+  text-align: center;
 }
 .ps-5 {
-    padding-left: 3rem !important;
+  padding-left: 3rem !important;
 }
 .btn-primary {
-    outline: none;
-    background-color: #FF535B !important;
-    border: 1px solid #FF535B !important;
-    color: #fff !important;
-    box-shadow: 0 3px 5px 0 rgb(255 83 91 / 30%);
+  outline: none;
+  background-color: #ff535b !important;
+  border: 1px solid #ff535b !important;
+  color: #fff !important;
+  box-shadow: 0 3px 5px 0 rgb(255 83 91 / 30%);
 }
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-.in {
-    font-size: 16px !important;
-    font-family: "Nunito",sans-serif;
-}
-.btn.btn-light {
-    color: #3c4858 !important;
-    border: 1px solid #dee2e6 !important;
-    outline: none;
-}
-.text-primary {
-    color: #FF535B !important;
-    text-decoration: none;
-}
-.fa-brands{
-    font-size: 15px;
-    color: #FF535B !important;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.example-card mat-card-header{
-    display: inline;
-    color: #FF535B !important;
+.example-full-width {
+  width: 100%;
+}
+.in {
+  font-size: 16px !important;
+  font-family: "Nunito", sans-serif;
+}
+.btn.btn-light {
+  color: #3c4858 !important;
+  border: 1px solid #dee2e6 !important;
+  outline: none;
+}
+.text-primary {
+  color: #ff535b !important;
+  text-decoration: none;
+}
+.fa-brands {
+  font-size: 15px;
+  color: #ff535b !important;
+}
+
+.example-card mat-card-header {
+  display: inline;
+  color: #ff535b !important;
 }
 
 .custom-link {
-    color: #FF535B;
-    font-size: small; 
-    text-decoration: none; 
-    transition: color 0.3s ease; 
+  color: #ff535b;
+  font-size: small;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .custom-link:hover {
-    color: #f76b72; 
-    text-decoration: underline; 
+  color: #f76b72;
+  text-decoration: underline;
 }
 
-.item{
-font-size: small;
+.item {
+  font-size: small;
 }

@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2'
-import { Router } from '@angular/router';
+import { Router, RouterLink} from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent,RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

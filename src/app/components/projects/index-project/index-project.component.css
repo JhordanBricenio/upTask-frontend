@@ -1,0 +1,24 @@
+.btn_edit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: rgb(1, 177, 1);
+    font-size: 1.5rem;
+}
+.btn_delete{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: #eb4242;
+    font-size: 1.5rem;
+}

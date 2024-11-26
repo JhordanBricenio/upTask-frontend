@@ -1,0 +1,20 @@
+<main>
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h4 class="py-3 text-center font-bold">Create project</h4>
+        </div>
+        <form [formGroup]="formProject" (ngSubmit)="create()">
+            <div class="col-md-8 offset-md-2 text-center">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Project</mat-label>
+                    <input formControlName="name"  required type="text" matInput
+                        placeholder="Review doc...">
+                    <mat-icon matSuffix>save</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-md-12  text-center">
+                <button class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</main>

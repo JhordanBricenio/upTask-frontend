@@ -1,0 +1,31 @@
+<main>
+    <div class="container mt-3">
+        <div class="col-md-12">
+            <h4 class="py-3 text-center font-bold">Projects</h4>
+        </div>
+        <table class="table table-hover table-responsive mb-0">
+            <thead>
+                <tr>
+                    <th scope="row">#</th>
+                    <th class="th-lg">Name</th>
+                    <th class="th-lg">Status</th>
+                    <th class="th-lg">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let project of projects">
+                    <th scope="row"> {{ project.id.slice(0, 4) }}...{{ project.id.slice(-4) }}</th>
+                    <td>{{project.name}}</td>
+                    <td (click)="updateState(project.id)">{{project.status}}</td>
+                    <td>
+                        <div class="d-flex flex-row">
+                            <button class="btn_delete" (click)="deleteProject(project)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
