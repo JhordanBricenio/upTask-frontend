@@ -3,12 +3,11 @@ import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2'
 import { Router, RouterLink} from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, HeaderComponent,RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

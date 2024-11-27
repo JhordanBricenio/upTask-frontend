@@ -1,0 +1,81 @@
+<main>
+    <div class="container my-4">
+        <div class="row">
+            <!-- Columna "New" -->
+            <div class="col-md-4 rounded  p-2">
+                <div class="card border-light ">
+                    <p style="background-color: #dfe1e7; width: 60px;" class="text-center rounded">
+                        New
+                    </p>
+                    <div class="card-body bg-light">
+                        <button class="btn shadow btn-sm w-100 mb-3">+ New Item</button>
+                        <div *ngFor="let task of tasks" class="card mb-2 shadow">
+                            <div class="card-body">
+                                <h6 style="background-color: #ffeae5; width: 60px;color: #f6573b;"
+                                    class="text-center rounded card-title">105041</h6>
+                                <p class="card-text small">{{task.name}}</p>
+                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
+                                <span style="background-color: #269aff;" class="badge ">{{task.statusTask.slice(0, 2).toUpperCase()}}</span>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- Columna "Doing" -->
+            <div class="col-md-4 rounded  p-2">
+                <div class="card border-light ">
+                    <p style="background-color: #dbebff; width: 60px; color: #2e6bbf;" class="text-center rounded">
+                        Doing
+                    </p>
+                    <div class="card-body bg-light">
+                        <div class="card mb-2 shadow">
+                            <div class="card-body">
+                                <h6 style="background-color: #ffeae5; width: 60px;color: #f6573b;"
+                                    class="text-center rounded card-title">105041</h6>
+                                <p class="card-text small" >E2E | OBS Análisis de ajuste...</p>
+                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
+                                <span style="background-color: #269aff;" class="badge ">New</span>
+                            </div>
+                        </div>
+                        <div class="card mb-2 shadow">
+                            <div class="card-body">
+                                <h6 class="card-title text-primary">105041</h6>
+                                <p class="card-text small">E2E | OBS Análisis de ajuste...</p>
+                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
+                                <span class="badge bg-secondary">New</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Columna "Done" -->
+            <div class="col-md-4 rounded  p-2">
+                <div class="card border-light ">
+                    <p style="background-color: #ddfdee; width: 60px; color: #268968;" class="text-center rounded">
+                        Done
+                    </p>
+                    <div class="card-body bg-light">
+                        <div class="card mb-2 shadow">
+                            <div class="card-body">
+                                <h6 style="background-color: #ffeae5; width: 60px;color: #f6573b;"
+                                    class="text-center rounded card-title">105041</h6>
+                                <p class="card-text small">E2E | OBS Análisis de ajuste...</p>
+                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
+                                <span style="background-color: #269aff;" class="badge ">New</span>
+                            </div>
+                        </div>
+                        <div class="card mb-2 shadow">
+                            <div class="card-body">
+                                <h6 class="card-title text-primary">105041</h6>
+                                <p class="card-text small">E2E | OBS Análisis de ajuste...</p>
+                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
+                                <span class="badge bg-secondary">New</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

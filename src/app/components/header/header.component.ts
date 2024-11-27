@@ -16,9 +16,7 @@ export class HeaderComponent {
   private router= inject(Router);
   
 
-  constructor() { 
-    console.log(this.authService.usuario.email.substring(0, 2).toUpperCase());
-    
+  constructor() {     
   }
 
   logout() {

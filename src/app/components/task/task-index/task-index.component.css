@@ -1,0 +1,14 @@
+.card {
+    border-radius: 5px;
+  }
+  .card .badge {
+    margin-right: 5px;
+  }
+  .card-header {
+    font-weight: bold;
+  }
+
+  h6{
+    font-size: small;
+  }
+  

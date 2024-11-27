@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotpassowrdComponent } from './components/forgotpassowrd/forgotpassowrd.component';
 import { RestartPassowrdComponent } from './components/restart-passowrd/restart-passowrd.component';
@@ -8,6 +7,8 @@ import { MessageComponent } from './components/message/message.component';
 import { CreateProjectComponent } from './components/projects/create-project/create-project.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndexProjectComponent } from './components/projects/index-project/index-project.component';
+import { TaskIndexComponent } from './components/task/task-index/task-index.component';
+import { TaskDetailComponent } from './components/task/task-detail/task-detail.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -20,7 +21,9 @@ export const routes: Routes = [
     path: 'admin', component: DashboardComponent,
     children: [
       { path: 'index-project', component: IndexProjectComponent },
-      { path: 'create-project', component: CreateProjectComponent }
+      { path: 'create-project', component: CreateProjectComponent },
+      { path: 'task-index/:id', component: TaskIndexComponent },
+      { path: 'task-detail', component: TaskDetailComponent }
     ]
   }
 

@@ -5,11 +5,12 @@ import { Project } from '../../../model/project';
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import Swal from 'sweetalert2';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-index-project',
   standalone: true,
-  imports: [CommonModule, MatIcon],
+  imports: [CommonModule, MatIcon, RouterLink],
   templateUrl: './index-project.component.html',
   styleUrl: './index-project.component.css'
 })
@@ -36,8 +37,8 @@ export class IndexProjectComponent implements OnInit {
       }
     })
   }
-  updateState(id:number){
-
+  taskForProject(){
+    console.log("task for project");
   }
 
   deleteProject(project: Project) {
