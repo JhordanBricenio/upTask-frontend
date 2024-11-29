@@ -1,5 +1,8 @@
 # Uptasck
 
+![image](https://github.com/user-attachments/assets/9db06c6d-d7f0-4689-a55f-168fcd90339f)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
 
 ## Development server
