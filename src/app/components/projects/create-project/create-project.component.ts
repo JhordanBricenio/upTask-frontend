@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProjectService } from '../../../services/project.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-project',
@@ -21,6 +22,7 @@ export class CreateProjectComponent {
   private projectService = inject(ProjectService);
   private formBuilder = inject(FormBuilder);
   public edit: boolean = false;
+  private router= inject(Router);
 
   formProject!: FormGroup;
 
@@ -50,6 +52,7 @@ export class CreateProjectComponent {
             text: "Project saved successfully",
             icon: "success"
           });
+          this.router.navigate(['/admin/index-project']);
         },
 
         error: () => {
@@ -63,8 +66,5 @@ export class CreateProjectComponent {
       })
   }
 
-  update() {
-
-  }
 }
 

@@ -37,8 +37,8 @@ export class AuthService {
     if (this._token != null) {
       return this._token;
     }
-    else if (this._token == null && sessionStorage.getItem('jwt') != null) {
-      this._token = sessionStorage.getItem('jwt');
+    else if (this._token == null && sessionStorage.getItem('token') != null) {
+      this._token = sessionStorage.getItem('token');
       return this._token;
     }
     return null;
@@ -67,12 +67,12 @@ export class AuthService {
     )
   }
 
-  public agregarAuthorizationHeader() {
-    let token = this.token;
-    if (token != null) {
-      return this.httheaders.append('Authorization', 'Bearer ' + token);
+  public agregarAuthorizationHeader(): HttpHeaders {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    if (this.token != null) {
+      headers = headers.set('Authorization', 'Bearer ' + this.token);
     }
-    return this.httheaders;
+    return headers;
   }
 
   public guardarUsuario(accessToken: string) {

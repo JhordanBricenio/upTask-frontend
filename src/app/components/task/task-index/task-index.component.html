@@ -8,17 +8,35 @@
                         New
                     </p>
                     <div class="card-body bg-light">
-                        <button class="btn shadow btn-sm w-100 mb-3">+ New Item</button>
-                        <div *ngFor="let task of tasks" class="card mb-2 shadow">
+                        <button type="button" class="btn shadow btn-sm w-100 mb-3" (click)="openModal()"
+                            data-bs-toggle="modal" data-bs-target="#newTaskModal">
+                            + New Item
+                        </button>
+                        <div *ngFor="let task of newTasks" class="card mb-2 shadow">
                             <div class="card-body">
                                 <h6 style="background-color: #ffeae5; width: 60px;color: #f6573b;"
-                                    class="text-center rounded card-title">105041</h6>
+                                    class="text-center rounded card-title">{{task.id.slice(0,6)}}</h6>
                                 <p class="card-text small">{{task.name}}</p>
                                 <p class="text-muted small mb-1">Christian Alexis Silva</p>
-                                <span style="background-color: #269aff;" class="badge ">{{task.statusTask.slice(0, 2).toUpperCase()}}</span>
+                                <div class="d-flex flex-row align-items-center justify-content-between ">
+                                    <div><span style="background-color: #ddddf0; color: #6466ea; cursor: pointer;"
+                                            class="badge "
+                                            (click)="changeStatus(task.id, 'DOING')">{{task.statusTask}}</span></div>
+                                    <div class="d-flex">
+                                        <button class="btn_edit" data-bs-toggle="modal" data-bs-target="#newTaskModal"
+                                            (click)="openModal(task)">
+                                            <mat-icon class="w-full">edit</mat-icon>
+                                        </button>
+                                        <button class="btn_delete" (click)="deleteTask(task.id)">
+                                            <mat-icon class="w-full">delete</mat-icon>
+                                        </button>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -29,21 +47,15 @@
                         Doing
                     </p>
                     <div class="card-body bg-light">
-                        <div class="card mb-2 shadow">
+                        <div *ngFor="let task of doingTasks" class="card mb-2 shadow">
                             <div class="card-body">
                                 <h6 style="background-color: #ffeae5; width: 60px;color: #f6573b;"
-                                    class="text-center rounded card-title">105041</h6>
-                                <p class="card-text small" >E2E | OBS Análisis de ajuste...</p>
-                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
-                                <span style="background-color: #269aff;" class="badge ">New</span>
-                            </div>
-                        </div>
-                        <div class="card mb-2 shadow">
-                            <div class="card-body">
-                                <h6 class="card-title text-primary">105041</h6>
-                                <p class="card-text small">E2E | OBS Análisis de ajuste...</p>
-                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
-                                <span class="badge bg-secondary">New</span>
+                                    class="text-center rounded card-title">{{task.id.slice(0,6)}}</h6>
+                                <p class="card-text small">{{task.name}}</p>
+                                <p class="text-muted small mb-1">Alexis Silva</p>
+                                <span style="background-color: #dbebff; color: #2e6bbf; cursor: pointer;" class="badge "
+                                    (click)="changeStatus(task.id, 'DONE')">{{task.statusTask}}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -55,25 +67,53 @@
                     <p style="background-color: #ddfdee; width: 60px; color: #268968;" class="text-center rounded">
                         Done
                     </p>
-                    <div class="card-body bg-light">
-                        <div class="card mb-2 shadow">
+                    <div *ngFor="let task of doneTasks" class="card-body bg-light">
+                        <div class=" card mb-2 shadow">
                             <div class="card-body">
                                 <h6 style="background-color: #ffeae5; width: 60px;color: #f6573b;"
-                                    class="text-center rounded card-title">105041</h6>
-                                <p class="card-text small">E2E | OBS Análisis de ajuste...</p>
+                                    class="text-center rounded card-title">{{task.id.slice(0,6)}}</h6>
+                                <p class="card-text small">{{task.name}}</p>
                                 <p class="text-muted small mb-1">Christian Alexis Silva</p>
-                                <span style="background-color: #269aff;" class="badge ">New</span>
-                            </div>
-                        </div>
-                        <div class="card mb-2 shadow">
-                            <div class="card-body">
-                                <h6 class="card-title text-primary">105041</h6>
-                                <p class="card-text small">E2E | OBS Análisis de ajuste...</p>
-                                <p class="text-muted small mb-1">Christian Alexis Silva</p>
-                                <span class="badge bg-secondary">New</span>
+                                <span style="background-color: #ddfdee; color: #268968;"
+                                    class="badge ">{{task.statusTask}}</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newTaskModal" tabindex="-1" aria-labelledby="newTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskModalLabel">{{ isEditing ? 'Edit Task' : 'Create New Task' }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formTask">
+                        <div class="mb-3">
+                            <label for="taskName" class="form-label">Task Name</label>
+                            <input type="text" formControlName="name" class="form-control" id="taskName"
+                                placeholder="Enter task name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskDescription" class="form-label">Description</label>
+                            <textarea formControlName="description" class="form-control" id="taskDescription" rows="3"
+                                placeholder="Enter task description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" [disabled]="formTask.invalid" (click)="saveTask()"
+                        data-bs-dismiss="modal">
+                        {{ isEditing ? 'Update Task' : 'Save Task' }}
+                    </button>
                 </div>
             </div>
         </div>

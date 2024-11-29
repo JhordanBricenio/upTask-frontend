@@ -5,7 +5,7 @@ import { Project } from '../../../model/project';
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import Swal from 'sweetalert2';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-index-project',
@@ -19,6 +19,7 @@ export class IndexProjectComponent implements OnInit {
   private proyectService = inject(ProjectService);
   private snack = inject(MatSnackBar);
   public projects: Project[] = [];
+  private router= inject(Router);
 
 
   constructor() { }
@@ -36,6 +37,10 @@ export class IndexProjectComponent implements OnInit {
         this.snack.open('Error loading projects', 'Alert', { duration: 2000 });
       }
     })
+  }
+
+  addProject(){
+    this.router.navigate(['/admin/create-project']);
   }
   taskForProject(){
     console.log("task for project");

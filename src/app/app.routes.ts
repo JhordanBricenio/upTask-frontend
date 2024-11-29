@@ -23,8 +23,11 @@ export const routes: Routes = [
       { path: 'index-project', component: IndexProjectComponent },
       { path: 'create-project', component: CreateProjectComponent },
       { path: 'task-index/:id', component: TaskIndexComponent },
-      { path: 'task-detail', component: TaskDetailComponent }
+      { path: 'task-detail', component: TaskDetailComponent },
+      { path: '', component: IndexProjectComponent },
+      
     ]
+    
   }
 
 

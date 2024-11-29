@@ -3,28 +3,47 @@
         <div class="col-md-12">
             <h4 class="py-3 text-center font-bold">Projects</h4>
         </div>
-        <table class="table table-hover table-responsive mb-0">
-            <thead>
-                <tr>
-                    <th class="th-lg">Name</th>
-                    <th class="th-lg">Status</th>
-                    <th class="th-lg">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let project of projects">
-                    <!-- <th scope="row"> {{ project.id.slice(0, 4) }}...{{ project.id.slice(-4) }}</th> -->
-                    <td style="cursor: pointer;" [routerLink]="['/admin/task-index', project.id]">{{project.name}}</td>
-                    <td  style="cursor: pointer;"  >{{project.status.toLowerCase()}}</td>
-                    <td >
-                        <div class="d-flex flex-row ">
-                            <button class="btn_delete" (click)="deleteProject(project)">
-                                <mat-icon class="w-full">delete</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <ng-container *ngIf="projects.length === 0">
+            <div class="d-flex justify-content-center">
+                <p class="text-center">No projects found</p>
+            </div>
+        </ng-container>
+        <div class="d-flex justify-content-center">
+            <button class="btn_add rounded bg-primary" (click)="addProject()">
+                <mat-icon class="w-full">add</mat-icon>
+            </button>
+        </div>
+        <ng-container *ngIf="projects.length > 0">
+            <table class="table table-hover table-responsive mb-0">
+                <thead>
+                    <tr>
+                        <th class="th-lg">Name</th>
+                        <th class="th-lg">Status</th>
+                        <th class="th-lg">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let project of projects">
+                        <!-- <th scope="row"> {{ project.id.slice(0, 4) }}...{{ project.id.slice(-4) }}</th> -->
+                        <td style="cursor: pointer;" [routerLink]="['/admin/task-index', project.id]">{{project.name}}
+                        </td>
+                        <td style="cursor: pointer;">
+                            <span class="badge" [ngClass]="{'badge-new': project.status=== 'NEW',
+                                'badge-doing': project.status === 'DOING',
+                                'badge-done': project.status === 'DONE'
+                                }">
+                                {{ project.status }} </span>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-row ">
+                                <button class="btn_delete" (click)="deleteProject(project)">
+                                    <mat-icon class="w-full">delete</mat-icon>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
     </div>
 </main>
