@@ -1,6 +1,20 @@
 # Uptasck
+![image](https://github.com/user-attachments/assets/ccdc3f80-69a8-4cef-8123-d6c894f74e9f)
+Dashboard principal.
+![image](https://github.com/user-attachments/assets/2e4a922c-9f9c-4ec9-a611-5aad9ddc48f7)
+Estados de tareas.
+![image](https://github.com/user-attachments/assets/f06eac05-b3b5-4a7f-8e7e-252ec25caed2)
+Lista de projectos por usuario.
+![image](https://github.com/user-attachments/assets/1a349c77-230a-42b3-b7be-8ffc8d975ce5)
+Recuperación de password.
+![image](https://github.com/user-attachments/assets/08b43263-173d-45c1-af64-867ffa56d884)
+![image](https://github.com/user-attachments/assets/a04532cd-5e32-4b61-8b5d-fa1ed445b733)
+Recuperación de password 
 
-![image](https://github.com/user-attachments/assets/9db06c6d-d7f0-4689-a55f-168fcd90339f)
+
+
+
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
